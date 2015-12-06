@@ -1,0 +1,10 @@
+language: cpp
+sudo: required
+dist: trusty
+
+os:
+- osx
+
+script:
+- cmake	-G Unix\ Makefiles ./
+- make package
