@@ -8,10 +8,10 @@ INSTALL(TARGETS HelloWorld DESTINATION .)
 set(APPS "HelloWorld")  # paths to executables
 set(DIRS " ")   # directories to search for prerequisites
 
-INSTALL(CODE "
-   include(BundleUtilities)
-   fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
-   " COMPONENT Runtime)
+#INSTALL(CODE "
+#   include(BundleUtilities)
+#   fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
+#   " COMPONENT Runtime)
 
 set(CPACK_BUNDLE_NAME HelloWorld)
 set(CPACK_BUNDLE_ICON OpenPSTD.icns)
