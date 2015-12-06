@@ -5,6 +5,9 @@ add_executable(HelloWorld main.cpp)
 
 INSTALL(TARGETS HelloWorld DESTINATION .)
 
+set(APPS "HelloWorld")  # paths to executables
+set(DIRS " ")   # directories to search for prerequisites
+
 INSTALL(CODE "
    include(BundleUtilities)
    fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
