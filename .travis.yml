@@ -12,6 +12,7 @@ before_script:
 - cmake --help
 - cpack --version
 - cpack --help
+- rm -R .git
 
 script:
 - cmake -G Unix\ Makefiles ./
