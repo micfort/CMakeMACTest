@@ -13,5 +13,10 @@ INSTALL(CODE "
    fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
    " COMPONENT Runtime)
 
+set(CPACK_BUNDLE_NAME HelloWorld)
+set(CPACK_BUNDLE_ICON OpenPSTD.icns)
+set(CPACK_BUNDLE_PLIST Info.plist)
+set(CPACK_BUNDLE_STARTUP_COMMAND HelloWorld)
+   
 set(CPACK_GENERATOR Bundle;DragNDrop;OSXX11;PackageMaker)
 include(CPack)
