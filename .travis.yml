@@ -24,6 +24,7 @@ script:
 #- cpack -V -G OSXX11
 #- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-OSXX11.dmg
 - ls -al
+- cat CPackConfig.cmake
 
 deploy:
   provider: releases
