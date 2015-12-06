@@ -17,11 +17,11 @@ script:
 - cmake -G Unix\ Makefiles ./
 - make VERBOSE=1
 - cpack -V -G Bundle
-- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-Bundle.dmg
-- cpack -V -G DragNDrop
-- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-DragNDrop.dmg
-- cpack -V -G OSXX11
-- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-OSXX11.dmg
+#- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-Bundle.dmg
+#- cpack -V -G DragNDrop
+#- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-DragNDrop.dmg
+#- cpack -V -G OSXX11
+#- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-OSXX11.dmg
 - ls -al
 
 deploy:

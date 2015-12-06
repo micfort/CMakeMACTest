@@ -16,7 +16,7 @@ target_link_libraries(HelloWorld unqlite)
 
 #set(APPS "${CMAKE_INSTALL_PREFIX}/HelloWorld")  # paths to executables
 set(APPS "${CMAKE_SOURCE_DIR}/HelloWorld")  # paths to executables
-set(DIRS "./")   # directories to search for prerequisites
+set(DIRS "")   # directories to search for prerequisites
 
 INSTALL(CODE "
    include(BundleUtilities)
