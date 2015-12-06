@@ -14,14 +14,15 @@ INSTALL(TARGETS HelloWorld DESTINATION .)
 
 target_link_libraries(HelloWorld unqlite)
 
-#set(APPS "${CMAKE_INSTALL_PREFIX}/HelloWorld")  # paths to executables
-set(APPS "${CMAKE_SOURCE_DIR}/HelloWorld")  # paths to executables
-set(DIRS "")   # directories to search for prerequisites
+if(APPLE)
+	set(APPS "${CMAKE_SOURCE_DIR}/_CPack_Packages/Darwin/Bundle/CMakeMACTest-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}-Darwin/HelloWorld.app/Contents/Resources/./HelloWorld")  # paths to executables
+	set(DIRS "")   # directories to search for prerequisites
 
-INSTALL(CODE "
-   include(BundleUtilities)
-   fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
-   " COMPONENT Runtime)
+	INSTALL(CODE "
+	   include(BundleUtilities)
+	   fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
+	   " COMPONENT Runtime)
+endif()
 
 set(CPACK_BUNDLE_NAME HelloWorld)
 set(CPACK_BUNDLE_ICON OpenPSTD.icns)
