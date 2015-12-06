@@ -7,4 +7,4 @@ os:
 
 script:
 - cmake	-G Unix\ Makefiles ./
-- make package
+- make package VERBOSE=1
