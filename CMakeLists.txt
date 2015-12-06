@@ -3,7 +3,15 @@ cmake_minimum_required(VERSION 2.8)
 
 add_executable(HelloWorld main.cpp)
 
+#------------------------------------
+# Rapidjson
+add_definitions(-DRAPIDJSON_HAS_STDSTRING=1)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+add_library(unqlite SHARED unqlite.c)
+
 INSTALL(TARGETS HelloWorld DESTINATION .)
+
+target_link_libraries(HelloWorld unqlite)
 
 set(APPS "HelloWorld")  # paths to executables
 set(DIRS " ")   # directories to search for prerequisites

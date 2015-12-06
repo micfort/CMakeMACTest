@@ -22,6 +22,7 @@ script:
 - mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-DragNDrop.dmg
 - cpack -V -G OSXX11
 - mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-OSXX11.dmg
+- ls -al
 
 deploy:
   provider: releases
