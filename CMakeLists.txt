@@ -15,7 +15,7 @@ INSTALL(TARGETS HelloWorld DESTINATION .)
 target_link_libraries(HelloWorld unqlite)
 
 #set(APPS "${CMAKE_INSTALL_PREFIX}/HelloWorld")  # paths to executables
-set(APPS "/Users/travis/build/micfort/CMakeMACTest/_CPack_Packages/Darwin/Bundle/CMakeMACTest-0.1.1-Darwin/HelloWorld.app/Contents/Resources/./HelloWorld")  # paths to executables
+set(APPS "${CMAKE_SOURCE_DIR}/HelloWorld")  # paths to executables
 set(DIRS "./")   # directories to search for prerequisites
 
 INSTALL(CODE "
