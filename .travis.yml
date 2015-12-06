@@ -7,4 +7,5 @@ os:
 
 script:
 - cmake	-G Unix\ Makefiles ./
-- make package VERBOSE=1
+- make VERBOSE=1
+- cpack -V -G Bundle
