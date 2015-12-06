@@ -5,5 +5,10 @@ add_executable(HelloWorld main.cpp)
 
 INSTALL(TARGETS HelloWorld DESTINATION .)
 
-set(CPACK_GENERATOR ZIP)
+INSTALL(CODE "
+   include(BundleUtilities)
+   fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
+   " COMPONENT Runtime)
+
+set(CPACK_GENERATOR Bundle;DragNDrop;OSXX11;PackageMaker)
 include(CPack)
