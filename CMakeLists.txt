@@ -10,17 +10,17 @@ add_library(unqlite SHARED unqlite.c)
 add_executable(HelloWorld main.cpp)
 
 INSTALL(TARGETS HelloWorld DESTINATION .)
-INSTALL(TARGETS unqlite DESTINATION .)
+#INSTALL(TARGETS unqlite DESTINATION .)
 
 target_link_libraries(HelloWorld unqlite)
 
 set(APPS "HelloWorld")  # paths to executables
-set(DIRS " ")   # directories to search for prerequisites
+set(DIRS "./")   # directories to search for prerequisites
 
-#INSTALL(CODE "
-#   include(BundleUtilities)
-#   fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
-#   " COMPONENT Runtime)
+INSTALL(CODE "
+   include(BundleUtilities)
+   fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
+   " COMPONENT Runtime)
 
 set(CPACK_BUNDLE_NAME HelloWorld)
 set(CPACK_BUNDLE_ICON OpenPSTD.icns)
