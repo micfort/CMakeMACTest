@@ -1,6 +1,10 @@
 PROJECT (CMakeMACTest)
 cmake_minimum_required(VERSION 2.8)
 
+set(CPACK_PACKAGE_VERSION_MAJOR 0)
+set(CPACK_PACKAGE_VERSION_MINOR 1)
+set(CPACK_PACKAGE_VERSION_PATCH 1)
+
 #------------------------------------
 # Rapidjson
 add_definitions(-DRAPIDJSON_HAS_STDSTRING=1)
