@@ -20,7 +20,7 @@ target_link_libraries(HelloWorld unqlite)
 
 if(APPLE)
 	set(APPS "${CMAKE_SOURCE_DIR}/_CPack_Packages/Darwin/Bundle/CMakeMACTest-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}-Darwin/HelloWorld.app/Contents/Resources/./HelloWorld")  # paths to executables
-	set(DIRS "")   # directories to search for prerequisites
+	set(DIRS "${CMAKE_SOURCE_DIR}")   # directories to search for prerequisites
 
 	INSTALL(CODE "
 	   include(BundleUtilities)
