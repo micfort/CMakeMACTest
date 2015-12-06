@@ -32,4 +32,4 @@ deploy:
   file_glob: true
   on:
     repo: micfort/CMakeMACTest
-	tags: true
+    tags: true
