@@ -9,3 +9,6 @@ script:
 - cmake	-G Unix\ Makefiles ./
 - make VERBOSE=1
 - cpack -V -G Bundle
+- cpack -V -G DragNDrop
+- cpack -V -G OSXX11
+- cpack -V -G PackageMaker
