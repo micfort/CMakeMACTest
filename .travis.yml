@@ -5,10 +5,31 @@ dist: trusty
 os:
 - osx
 
+before_script:
+- uname -r
+- gcc -v
+- cmake --version
+- cmake --help
+- cpack --version
+- cpack --help
+
 script:
-- cmake	-G Unix\ Makefiles ./
+- cmake -G Unix\\ Makefiles ./
 - make VERBOSE=1
-- cpack -V -G Bundle -P Bundle
-- cpack -V -G DragNDrop -P DragNDrop
-- cpack -V -G OSXX11 -P OSXX11
-#- cpack -V -G PackageMaker -P PackageMaker
+- cpack -V -G Bundle
+- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-Bundle.dmg
+- cpack -V -G DragNDrop
+- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-DragNDrop.dmg
+- cpack -V -G OSXX11
+- mv CMakeMACTest-0.1.1-Darwin.dmg CMakeMACTest-0.1.1-OSXX11.dmg
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: mw5NUVBSMsJltdFTx00iMsLRIBaSRSQcrklUR+BBz20venIvImRczyZs9RSPFlsVGgxVAvEtyusah91t0p16HyEKXMNVO1XJbQOY0TX7ZkRcji7ouwsCOKJCWcty08+YGoYe3jBrDqbgsyfSipXqv9dvlGkpEL9R5gyz59LWxnz0nMa4Zb+fQQ5qbfJplzKCVbfs68N/ExIZoF51rdGeUDzD2zAeXfqnbjB6+aVI3PDYCAJA3/WlO+ul6+gNeVhsOMeTKUA94gLYu8hF1z21sBiOmouypMewx1+U8XUxoQX7lxnDoYwXxf6nFrU/RhW1idCpLtys/S2wcrtIzAWX5ddY1C9c0QQsZs32xo1pBQ6sHEHWMs0Xdr/BpFcecXKJCBf/ItLc8MmpcRiDu8DWszCKhD9LMB5XNAxJA8tBeC/COHYa644XLavWm/6AUFB61JFUu3bzpwK1yG3nJp8nvDQAleOlgxhc7AEra8oO5UiBymFmgleRmlm4ROUqO4/u6gU3qh0ZEY31wrLdJLJRq8CsNfB2KtA/N8jT6TSNYkfOi9qnjQtdXp7194srYe7PPWI6JN+VD2pR8hLjfQHMv4asE6Wi91KOBWlB/+3E8KFS0TcCJBv6jFlUnazoIbQcRTCvpud1JfhGg7Pd2HuVa+QJCO6pA1hJeq6Cev1fPos=
+  file: "*.dmg"
+  file_glob: true
+  on:
+    repo: micfort/CMakeMACTest
+	tags: true
